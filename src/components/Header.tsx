@@ -26,7 +26,10 @@ export const Header = () => {
       
       {/* Navegación - Letras más grandes y claras */}
       <div className="flex gap-6 items-center mt-4 md:mt-0">
-        <a href="#projects" className="text-antique-silver hover:text-old-gold transition-colors tracking-[0.2em] font-medium">
+        <a
+          href="#proyectos"
+          className="text-antique-silver hover:text-old-gold transition-colors tracking-[0.2em] font-medium"
+        >
           [ 01_PROJECTS ]
         </a>
         <a 
@@ -38,12 +41,12 @@ export const Header = () => {
           [ 02_LINKEDIN ]
         </a>
         <a 
-          href="https://github.com/Susana471978" 
+          href="https://www.instagram.com/syntexia.ai/" 
           target="_blank" 
           rel="noopener noreferrer"
           className="bg-old-gold/10 text-old-gold px-3 py-1 border border-old-gold/30 hover:bg-old-gold hover:text-obsidian transition-all tracking-[0.2em] font-bold"
         >
-          [ 03_GITHUB ]
+          [ 03_INSTAGRAM ]
         </a>
       </div>
     </nav>
