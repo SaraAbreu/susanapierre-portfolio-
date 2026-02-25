@@ -121,13 +121,13 @@ export default function Home() {
           </div>
 
           {/* HARDWARE: MONITOR */}
-          <div className="relative mx-auto max-w-[1100px] w-full px-1 sm:px-4 flex flex-col items-center group/monitor">
-            <div className="relative w-full bg-[#0A0A0A] rounded-[35px] p-5 border border-emerald-500/30 
-                    shadow-[0_0_80px_-10px_rgba(16,185,129,0.4)] transition-all duration-700 
-                    group-hover/monitor:shadow-[0_0_100px_-5px_rgba(16,185,129,0.6)]">
+          <div className="relative mx-auto max-w-[1100px] w-full px-1 sm:px-4 flex flex-col items-center group/monitor mb-8 md:mb-16">
+                <div className="relative w-full bg-[#0A0A0A] rounded-[20px] sm:rounded-[35px] p-2 sm:p-5 border border-emerald-500/30 
+                  shadow-[0_0_40px_-10px_rgba(16,185,129,0.2)] transition-all duration-700 
+                  group-hover/monitor:shadow-[0_0_100px_-5px_rgba(16,185,129,0.6)]">
 
-              <div className="relative aspect-[16/10] w-full bg-[#020202] rounded-[25px] overflow-hidden 
-                      border-[12px] border-[#121212] shadow-[inset_0_0_120px_rgba(0,0,0,1)] 
+                    <div className="relative aspect-[16/10] w-full bg-[#020202] rounded-[15px] sm:rounded-[25px] overflow-hidden 
+                      border-[6px] sm:border-[12px] border-[#121212] shadow-[inset_0_0_60px_rgba(0,0,0,1)] 
                       flex items-center justify-center">
 
                 {/* --- CAPA DE FONDO: VIDEO --- */}
@@ -140,7 +140,7 @@ export default function Home() {
                 </div>
 
                 {/* Contenedor de Proyectos Reflejados */}
-                <div className="relative z-20 w-full h-full flex items-center justify-center gap-4 sm:gap-6 px-2 sm:px-8 py-6 sm:py-12 overflow-x-auto no-scrollbar">
+                <div className="relative z-20 w-full h-full flex items-center justify-start gap-4 sm:gap-6 px-2 sm:px-8 py-4 sm:py-12 overflow-x-auto no-scrollbar scrollbar-thin scrollbar-thumb-emerald-500">
                   {[
                     {
                       title: "Chatbot_Ciudadano",
@@ -167,7 +167,7 @@ export default function Home() {
                       description: "Motor de facturación electrónica y conciliación bancaria autónoma. Automatización de flujos financieros con validación fiscal íntegra y generación de informes de alta precisión."
                     }
                   ].map((project, idx) => (
-                    <div key={idx} className="relative w-[200px] sm:w-[260px] h-[320px] sm:h-[360px] transition-all duration-500 hover:scale-[1.05] group/card flex-shrink-0">
+                    <div key={idx} className="relative w-[180px] sm:w-[260px] h-[260px] sm:h-[360px] transition-all duration-500 hover:scale-[1.05] group/card flex-shrink-0 mx-2">
                       <div className="absolute -inset-1 bg-emerald-500/10 blur-lg opacity-0 group-hover/card:opacity-100 transition-opacity" />
                       <div className="relative h-full w-full bg-black/85 backdrop-blur-md border border-old-gold/20 rounded-xl p-5 overflow-hidden shadow-2xl transition-all group-hover/card:border-old-gold/50 flex flex-col">
 
@@ -196,20 +196,20 @@ export default function Home() {
                           </div>
                         </div>
 
-                        <div className="mb-4 flex-grow">
-                          <p className="text-[10px] text-white/80 leading-normal font-light italic border-l border-old-gold/20 pl-2">
+                        <div className="mb-2 sm:mb-4 flex-grow">
+                          <p className="text-[10px] sm:text-[11px] text-white/80 leading-normal font-light italic border-l border-old-gold/20 pl-2">
                             {project.description}
                           </p>
                         </div>
 
                         {/* Botón de Estado / Acción */}
-                        <div className="mt-4">
+                        <div className="mt-2 sm:mt-4">
                           {project.url ? (
                             <a href={project.url} target="_blank" rel="noopener noreferrer" className="block w-full py-2 bg-emerald-500/10 border border-emerald-500/20 text-[8px] text-emerald-400 font-mono uppercase tracking-[0.15em] hover:bg-emerald-500 hover:text-black text-center transition-all font-bold cursor-pointer">
                               [ VER_REPOSITORIO ]
                             </a>
                           ) : (
-                            <div className="w-full py-2 bg-white/5 border border-white/10 text-[7px] text-white/40 font-mono uppercase tracking-[0.1em] text-center font-bold">
+                            <div className="w-full py-1 sm:py-2 bg-white/5 border border-white/10 text-[7px] sm:text-[8px] text-white/40 font-mono uppercase tracking-[0.1em] text-center font-bold">
                               {project.status}
                             </div>
                           )}
@@ -231,9 +231,9 @@ export default function Home() {
             </div>
 
             {/* Soporte */}
-            <div className="w-40 h-8 bg-gradient-to-b from-[#111] to-black border-x border-white/5 shadow-2xl" />
-            <div className="w-64 h-3 bg-[#0A0A0A] rounded-t-2xl border-t border-emerald-500/30 shadow-[0_-10px_40px_rgba(16,185,129,0.2)]" />
-            <div className="w-48 h-2 bg-emerald-500/40 blur-md rounded-full mt-1 opacity-50" />
+            <div className="w-24 sm:w-40 h-4 sm:h-8 bg-gradient-to-b from-[#111] to-black border-x border-white/5 shadow-2xl" />
+            <div className="w-32 sm:w-64 h-2 sm:h-3 bg-[#0A0A0A] rounded-t-2xl border-t border-emerald-500/30 shadow-[0_-10px_40px_rgba(16,185,129,0.2)]" />
+            <div className="w-24 sm:w-48 h-1 sm:h-2 bg-emerald-500/40 blur-md rounded-full mt-1 opacity-50" />
           </div>
         </section>
 
