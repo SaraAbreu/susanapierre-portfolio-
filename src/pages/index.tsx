@@ -9,10 +9,10 @@ export default function Home() {
     <div className="bg-obsidian min-h-screen text-antique-silver selection:bg-old-gold selection:text-obsidian font-sans">
       <Header />
 
-      <main className="max-w-6xl mx-auto px-6 py-12">
+      <main className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 py-8 md:py-12">
 
         {/* 00_HERO: Impacto Inicial Estilo Máquina */}
-        <section className="relative min-h-[85vh] flex flex-col justify-center items-center text-center mb-24 overflow-hidden">
+        <section className="relative min-h-[70vh] flex flex-col justify-center items-center text-center mb-12 md:mb-24 overflow-hidden">
 
           {/* Fondo de Cuadrícula 3D Mejorado */}
           <div className="absolute inset-0 z-0 opacity-20"
@@ -45,7 +45,7 @@ export default function Home() {
 
             {/* TÍTULO PRINCIPAL: IMPACTO MECÁNICO */}
             <div className="relative group mb-12">
-              <h1 className="text-6xl md:text-9xl font-black text-white leading-none tracking-tighter uppercase">
+              <h1 className="text-4xl sm:text-6xl md:text-9xl font-black text-white leading-none tracking-tighter uppercase">
                 SISTEMA DE <br />
                 <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-b from-old-gold to-old-gold/60">
                   INGENIERÍA
@@ -54,7 +54,7 @@ export default function Home() {
                 </span>
               </h1>
 
-              <p className="mt-4 text-antique-silver/40 font-mono text-[10px] tracking-[0.8em] uppercase">
+              <p className="mt-2 md:mt-4 text-antique-silver/40 font-mono text-[9px] sm:text-[10px] tracking-[0.5em] md:tracking-[0.8em] uppercase">
                 Designed_by_Susana_Pierre // Interface_V1.0
               </p>
             </div>
@@ -77,21 +77,21 @@ export default function Home() {
           </div>
         </section>
         {/* 01_MANIFIESTO: Introducción Profesional */}
-        <section className="mb-32 mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <section className="mb-16 md:mb-32 mt-8 md:mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div>
             <div className="flex items-center gap-4 mb-8 opacity-60 group">
               <span className="text-old-gold font-mono text-lg font-bold">[01]</span>
               <div className="h-[1px] w-12 bg-old-gold/40 group-hover:w-20 transition-all duration-500"></div>
               <span className="tracking-[0.4em] uppercase text-xs font-mono font-bold text-white">Sobre_Mí</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tighter leading-tight">
+            <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold text-white mb-6 md:mb-8 tracking-tighter leading-tight">
               Arquitecturas de <span className="text-old-gold">Automatización</span> para la era de la IA.
             </h2>
-            <p className="text-xl md:text-2xl leading-relaxed text-antique-silver/90 border-l-4 border-old-gold/30 pl-8 italic">
+            <p className="text-base sm:text-xl md:text-2xl leading-relaxed text-antique-silver/90 border-l-4 border-old-gold/30 pl-4 md:pl-8 italic">
               "Diseño sistemas resilientes donde la Inteligencia Artificial y la automatización convergen para eliminar ineficiencias operativas."
             </p>
           </div>
-          <div className="bg-black/60 border-2 border-old-gold p-8 rounded-sm font-mono text-[14px] leading-relaxed shadow-2xl">
+          <div className="bg-black/60 border-2 border-old-gold p-4 md:p-8 rounded-sm font-mono text-[13px] md:text-[14px] leading-relaxed shadow-2xl">
             <p className="text-old-gold mb-4">// PERFIL_DEL_SISTEMA_CARGADO</p>
             <div className="space-y-3 text-antique-silver/80">
               <p>&gt; Especialista en flujos de IA Generativa.</p>
@@ -105,7 +105,7 @@ export default function Home() {
         </section>
 
         {/* 02_PROYECTOS: Consola con Fondo de Video y Resplandor Esmeralda */}
-        <section id="proyectos" className="mb-48 relative flex flex-col items-center">
+        <section id="proyectos" className="mb-20 md:mb-48 relative flex flex-col items-center">
           {/* Encabezado Terminal */}
           <div className="flex flex-col items-center mb-16 text-center">
             <div className="flex items-center gap-4 opacity-60 mb-6 group">
@@ -115,13 +115,13 @@ export default function Home() {
                 Proyectos_Seleccionados
               </span>
             </div>
-            <div className="max-w-3xl px-6 text-antique-silver/90 font-mono text-lg lowercase">
+            <div className="max-w-3xl px-2 md:px-6 text-antique-silver/90 font-mono text-base md:text-lg lowercase">
               &gt; analizando_repositorios_activos...
             </div>
           </div>
 
           {/* HARDWARE: MONITOR */}
-          <div className="relative mx-auto max-w-[1100px] w-full px-4 flex flex-col items-center group/monitor">
+          <div className="relative mx-auto max-w-[1100px] w-full px-1 sm:px-4 flex flex-col items-center group/monitor">
             <div className="relative w-full bg-[#0A0A0A] rounded-[35px] p-5 border border-emerald-500/30 
                     shadow-[0_0_80px_-10px_rgba(16,185,129,0.4)] transition-all duration-700 
                     group-hover/monitor:shadow-[0_0_100px_-5px_rgba(16,185,129,0.6)]">
@@ -140,7 +140,7 @@ export default function Home() {
                 </div>
 
                 {/* Contenedor de Proyectos Reflejados */}
-                <div className="relative z-20 w-full h-full flex items-center justify-center gap-6 px-8 py-12 overflow-x-auto no-scrollbar">
+                <div className="relative z-20 w-full h-full flex items-center justify-center gap-4 sm:gap-6 px-2 sm:px-8 py-6 sm:py-12 overflow-x-auto no-scrollbar">
                   {[
                     {
                       title: "Chatbot_Ciudadano",
@@ -167,7 +167,7 @@ export default function Home() {
                       description: "Motor de facturación electrónica y conciliación bancaria autónoma. Automatización de flujos financieros con validación fiscal íntegra y generación de informes de alta precisión."
                     }
                   ].map((project, idx) => (
-                    <div key={idx} className="relative w-[260px] h-[360px] transition-all duration-500 hover:scale-[1.05] group/card flex-shrink-0">
+                    <div key={idx} className="relative w-[200px] sm:w-[260px] h-[320px] sm:h-[360px] transition-all duration-500 hover:scale-[1.05] group/card flex-shrink-0">
                       <div className="absolute -inset-1 bg-emerald-500/10 blur-lg opacity-0 group-hover/card:opacity-100 transition-opacity" />
                       <div className="relative h-full w-full bg-black/85 backdrop-blur-md border border-old-gold/20 rounded-xl p-5 overflow-hidden shadow-2xl transition-all group-hover/card:border-old-gold/50 flex flex-col">
 
@@ -238,14 +238,14 @@ export default function Home() {
         </section>
 
         {/* Sección de Flujo Lógico: Arquitectura Minimalista Interactiva */}
-<section className="mb-48 relative flex flex-col items-center group/panel">
+  <section className="mb-20 md:mb-48 relative flex flex-col items-center group/panel">
   {/* Fondo de Micro-puntos (Dot Matrix) más elegante que el Grid */}
   <div className="absolute inset-0 bg-[radial-gradient(#ffffff05_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
 
-  <div className="relative z-10 flex flex-col items-center w-full max-w-6xl px-6">
+  <div className="relative z-10 flex flex-col items-center w-full max-w-6xl px-2 md:px-6">
     
     {/* Header Minimalista */}
-    <div className="flex flex-col items-center mb-20">
+    <div className="flex flex-col items-center mb-10 md:mb-20">
        <span className="text-old-gold font-mono text-[9px] tracking-[0.6em] uppercase opacity-40 mb-3">System_Architecture_Blueprint</span>
        <h3 className="text-white text-xl font-light tracking-[0.2em] uppercase">
          Flujo Lógico <span className="text-old-gold/80 italic">Operativo</span>
@@ -254,11 +254,11 @@ export default function Home() {
     </div>
 
     {/* Contenedor Principal de Nodos */}
-    <div className="flex flex-col lg:flex-row items-stretch justify-center w-full gap-0">
+    <div className="flex flex-col lg:flex-row items-stretch justify-center w-full gap-4 md:gap-0">
       
       {/* NODO 01: ENTRADA */}
       <div className="relative flex flex-col items-center group/node">
-        <div className="border border-white/5 px-8 py-10 bg-white/[0.02] backdrop-blur-sm min-w-[220px] text-center transition-all duration-500 group-hover/node:bg-white/[0.05] group-hover/node:border-white/20">
+        <div className="border border-white/5 px-4 md:px-8 py-6 md:py-10 bg-white/[0.02] backdrop-blur-sm min-w-[160px] md:min-w-[220px] text-center transition-all duration-500 group-hover/node:bg-white/[0.05] group-hover/node:border-white/20">
           <div className="text-[10px] text-white/20 font-mono mb-6 tracking-widest uppercase">Step_01</div>
           <span className="text-antique-silver font-mono text-[12px] uppercase tracking-[0.15em] block mb-2">Entrada_De_Datos</span>
           <div className="h-[1px] w-4 bg-white/10 mx-auto transition-all group-hover/node:w-12"></div>
@@ -275,7 +275,7 @@ export default function Home() {
       <div className="relative flex flex-col items-center group/node">
         {/* Glow muy suave en el centro */}
         <div className="absolute -inset-2 bg-old-gold/5 blur-2xl opacity-0 group-hover/node:opacity-100 transition-opacity duration-700"></div>
-        <div className="relative border border-old-gold/20 px-10 py-12 bg-black/40 backdrop-blur-md min-w-[260px] text-center shadow-[0_0_40px_-10px_rgba(178,148,91,0.05)] transition-all duration-500 group-hover/node:border-old-gold/50">
+        <div className="relative border border-old-gold/20 px-6 md:px-10 py-8 md:py-12 bg-black/40 backdrop-blur-md min-w-[180px] md:min-w-[260px] text-center shadow-[0_0_40px_-10px_rgba(178,148,91,0.05)] transition-all duration-500 group-hover/node:border-old-gold/50">
           <div className="text-[10px] text-old-gold/40 font-mono mb-6 tracking-widest uppercase animate-pulse">Processing_Core</div>
           <span className="text-old-gold font-mono text-[14px] font-bold uppercase tracking-[0.3em]">Cerebro_IA (LLM)</span>
         </div>
@@ -289,7 +289,7 @@ export default function Home() {
 
       {/* NODO 03: EJECUCIÓN */}
       <div className="relative flex flex-col items-center group/node">
-        <div className="border border-white/5 px-8 py-10 bg-white/[0.02] backdrop-blur-sm min-w-[220px] text-center transition-all duration-500 group-hover/node:bg-white/[0.05] group-hover/node:border-white/20">
+        <div className="border border-white/5 px-4 md:px-8 py-6 md:py-10 bg-white/[0.02] backdrop-blur-sm min-w-[160px] md:min-w-[220px] text-center transition-all duration-500 group-hover/node:bg-white/[0.05] group-hover/node:border-white/20">
           <div className="text-[10px] text-white/20 font-mono mb-6 tracking-widest uppercase">Step_03</div>
           <span className="text-antique-silver font-mono text-[12px] uppercase tracking-[0.15em] block mb-2">Ejecución_Autónoma</span>
           <div className="h-[1px] w-4 bg-white/10 mx-auto transition-all group-hover/node:w-12"></div>
