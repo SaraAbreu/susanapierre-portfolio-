@@ -148,7 +148,7 @@ export default function Home() {
                       latency: "0.012ms",
                       status: "Listo_PARA_DESPLEGAR",
                       url: null,
-                      desc: "Agente conversacional inteligente con integración RAG. Optimizado para resolver consultas complejas y automatizar trámites en tiempo real mediante procesamiento de lenguaje natural."
+                      description: "Agente conversacional inteligente con integración RAG. Optimizado para resolver consultas complejas y automatizar trámites en tiempo real mediante procesamiento de lenguaje natural."
                     },
                     {
                       title: "Email_System_Control",
@@ -156,7 +156,7 @@ export default function Home() {
                       latency: "0.850ms",
                       status: "BUILDING...",
                       url: null,
-                      desc: "Sistema de mensajería automatizada basado en disparadores de comportamiento. Gestión masiva de notificaciones críticas con filtrado inteligente y trazabilidad total de entrega."
+                      description: "Sistema de mensajería automatizada basado en disparadores de comportamiento. Gestión masiva de notificaciones críticas con filtrado inteligente y trazabilidad total de entrega."
                     },
                     {
                       title: "Smartbilling",
@@ -164,7 +164,7 @@ export default function Home() {
                       latency: "0.005ms",
                       status: "PROXIMO_LANZAMIENTO",
                       url: null,
-                      desc: "Motor de facturación electrónica y conciliación bancaria autónoma. Automatización de flujos financieros con validación fiscal íntegra y generación de informes de alta precisión."
+                      description: "Motor de facturación electrónica y conciliación bancaria autónoma. Automatización de flujos financieros con validación fiscal íntegra y generación de informes de alta precisión."
                     }
                   ].map((project, idx) => (
                     <div key={idx} className="relative w-[260px] h-[360px] transition-all duration-500 hover:scale-[1.05] group/card flex-shrink-0">
@@ -198,7 +198,7 @@ export default function Home() {
 
                         <div className="mb-4 flex-grow">
                           <p className="text-[10px] text-white/80 leading-normal font-light italic border-l border-old-gold/20 pl-2">
-                            {project.desc}
+                            {project.description}
                           </p>
                         </div>
 
