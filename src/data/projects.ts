@@ -12,6 +12,7 @@ export const projects: Project[] = [
   {
     id: "SYS_BOT_01",
     title: "Chatbot Ciudadano",
+    description: "Asistente virtual para atención ciudadana, disponible 24/7, que integra procesamiento de lenguaje natural y múltiples canales de comunicación.",
     status: "active",
     stack: ["Python", "Rasa", "FastAPI", "Docker", "Azure", "Telegram API"],
     metrics: {
@@ -25,6 +26,7 @@ export const projects: Project[] = [
   {
     id: "SYS_FIN_02",
     title: "Sistema de Facturación",
+    description: "Plataforma para gestión y emisión de facturas electrónicas, diseñada para empresas que requieren trazabilidad y cumplimiento normativo.",
     status: "dev_mode",
     stack: ["Python", "FastAPI", "PostgreSQL", "Docker", "Azure"],
     metrics: {
@@ -38,6 +40,7 @@ export const projects: Project[] = [
   {
     id: "SYS_MAIL_03",
     title: "Correo Automatizado",
+    description: "Sistema automatizado para el envío masivo y personalizado de correos electrónicos, con monitoreo y gestión de colas en tiempo real.",
     status: "dev_mode",
     stack: ["Python", "Celery", "FastAPI", "SMTP", "Docker"],
     metrics: {
