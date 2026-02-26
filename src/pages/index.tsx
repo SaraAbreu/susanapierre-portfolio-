@@ -6,334 +6,272 @@ import { projects } from '../data/projects';
 export default function Home() {
   const [showCard, setShowCard] = useState(false);
   return (
-    <div className="bg-obsidian min-h-screen text-antique-silver selection:bg-old-gold selection:text-obsidian font-sans">
+    <div className="bg-obsidian min-h-screen text-antique-silver selection:bg-old-gold selection:text-obsidian font-sans overflow-x-hidden">
       <Header />
 
-      <main className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 py-8 md:py-12">
+      <main className="max-w-6xl mx-auto px-4 md:px-6 pt-1 md:pt-12 pb-6 md:pb-12">
 
-        {/* 00_HERO: Impacto Inicial Estilo Máquina */}
-        <section className="relative min-h-[70vh] flex flex-col justify-center items-center text-center mb-12 md:mb-24 overflow-hidden">
-
-          {/* Fondo de Cuadrícula 3D Mejorado */}
-          <div className="absolute inset-0 z-0 opacity-20"
-            style={{
-              backgroundImage: `linear-gradient(to right, #B2945B 1px, transparent 1px), linear-gradient(to bottom, #B2945B 1px, transparent 1px)`,
-              backgroundSize: '50px 50px',
-              perspective: '1200px',
-              transform: 'rotateX(55deg) translateY(-120px)',
-              maskImage: 'radial-gradient(circle at center, black 30%, transparent 90%)'
-            }}
-          />
-
-          {/* Elementos Decorativos de Terminal Lateral */}
-          <div className="absolute left-10 top-1/2 -translate-y-1/2 hidden xl:block font-mono text-[8px] text-old-gold/20 text-left space-y-1">
-            <p>LOG_STREAM: ACTIVE</p>
-            <p>X_COORD: 14.02.26</p>
-            <p>Y_COORD: 09.27.03</p>
-            <p>BUFFER_OVR: NULL</p>
+        {/* 00_HERO: Estilo Consola de Operaciones con Datos en Esquinas */}
+        <section className="relative min-h-[50vh] md:min-h-[75vh] flex flex-col justify-center items-center text-center mb-4 md:mb-24 overflow-hidden pt-4 md:pt-10 bg-[#050505]">
+          {/* CAPA 0: Fondo imagen hero */}
+          <div className="absolute inset-0 z-0 w-full h-full opacity-40 pointer-events-none flex">
+            <video autoPlay loop muted playsInline className="w-full h-full object-cover" style={{objectFit: 'cover'}}>
+              <source src="/fondohero.mp4" type="video/mp4" />
+            </video>
           </div>
 
-          <div className="relative z-10 flex flex-col items-center">
+          {/* CAPA 1: SCANLINES (Efecto Monitor CRT) */}
+          <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]"></div>
 
-            {/* Versión del Sistema */}
-            <div className="inline-block px-4 py-1.5 mb-10 border border-old-gold/30 bg-black/40 backdrop-blur-sm rounded-sm">
-              <span className="text-old-gold font-mono text-[10px] tracking-[0.6em] uppercase flex items-center gap-3">
-                <span className="w-1.5 h-1.5 bg-old-gold rounded-full animate-pulse"></span>
-                SISTEMA_OPERATIVO_V2.6.60
+          {/* CAPA 2: MICRO-DATOS EN ESQUINAS (Recomendación) */}
+          <div className="absolute inset-0 z-0 opacity-20 pointer-events-none font-mono text-[7px] md:text-[9px] text-old-gold p-6 flex justify-between items-start">
+            {/* Esquina Superior Izquierda */}
+            <div className="flex flex-col gap-1 text-left">
+              <p className="animate-pulse">● SYS_LIVE_CONNECT</p>
+              <p>IP_TRACE: 192.168.1.XX</p>
+              <p>MEM_USAGE: 24.5%</p>
+              <div className="h-px w-8 bg-old-gold/30 my-1"></div>
+              <p className="text-[6px] opacity-50">0x445A_INIT_CORE</p>
+            </div>
+            {/* Esquina Superior Derecha */}
+            <div className="flex flex-col gap-1 text-right">
+              <p>LATENCY: 0.002ms</p>
+              <p>ENCRYPT: AES_256_ACTIVE</p>
+              <p>SIGNAL: STRONG</p>
+              <div className="h-px w-8 bg-old-gold/30 my-1 ml-auto"></div>
+              <p className="text-[6px] opacity-50">SEC_LAYER_v4.2</p>
+            </div>
+          </div>
+
+          {/* CAPA 3: RESPLANDOR (GLOW) CENTRAL */}
+          <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(178,148,91,0.08)_0%,transparent_70%)] pointer-events-none"></div>
+
+          {/* CONTENEDOR DE TEXTO: Mantenemos el gap-8 y md:gap-12 para el espacio entre textos */}
+          <div className="relative z-10 flex flex-col items-center w-full gap-8 md:gap-12">
+
+            {/* BLOQUE 1: BADGE / PROMPT */}
+            <div className="inline-block px-3 py-1 border border-emerald-500/30 bg-emerald-500/5 backdrop-blur-sm rounded-sm">
+              <span className="text-emerald-500 font-mono text-[9px] md:text-[10px] tracking-[0.4em] uppercase flex items-center gap-3">
+                <span className="animate-pulse">●</span>
+                SUSANA_PIERRE_OS_v2.6.60
               </span>
             </div>
 
-            {/* TÍTULO PRINCIPAL: IMPACTO MECÁNICO */}
-            <div className="relative group mb-12">
-              <h1 className="text-4xl sm:text-6xl md:text-9xl font-black text-white leading-none tracking-tighter uppercase">
-                SISTEMA DE <br />
-                <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-b from-old-gold to-old-gold/60">
+            {/* BLOQUE 2: TÍTULO Y SUBTÍTULO */}
+            <div className="relative group w-full px-2">
+              <h1 className="text-4xl xs:text-5xl sm:text-7xl md:text-9xl font-black text-white leading-[1.1] tracking-tighter uppercase">
+                SISTEMA <br />
+                <span className="text-old-gold drop-shadow-[0_0_20px_rgba(178,148,91,0.4)]">
                   INGENIERÍA
-                  {/* Capas de Glitch sutiles */}
-                  <span className="absolute top-0 left-0 w-full h-full text-white opacity-10 animate-pulse transition-transform group-hover:translate-x-1">INGENIERÍA</span>
                 </span>
               </h1>
-
-              <p className="mt-2 md:mt-4 text-antique-silver/40 font-mono text-[9px] sm:text-[10px] tracking-[0.5em] md:tracking-[0.8em] uppercase">
-                Designed_by_Susana_Pierre // Interface_V1.0
+              <p className="mt-8 text-white/30 font-mono text-[8px] md:text-[10px] tracking-[0.5em] uppercase">
+                {`>> ROOT_ACCESS_GRANTED // SESSION_ID: 8892-001`}
               </p>
             </div>
 
-            {/* SUBTÍTULO: PROTOCOLO ACTIVO */}
-            <div className="flex flex-col items-center gap-6">
-              <div className="flex items-center gap-4">
-                <span className="text-emerald-500 font-mono text-xl animate-pulse font-bold">&gt;</span>
-                <p className="text-emerald-400 font-mono text-sm md:text-base tracking-[0.25em] uppercase font-bold">
-                  ESTABLECIENDO_PROTOCOLOS_DE_AUTOMATIZACIÓN...
+            {/* BLOQUE 3: STATUS / PROTOCOLO */}
+            <div className="flex flex-col items-center gap-4 w-full px-4">
+              <div className="flex items-center gap-3">
+                <span className="text-emerald-500 font-mono text-xl animate-pulse font-bold">&gt;_</span>
+                <p className="text-emerald-400 font-mono text-[10px] md:text-base tracking-[0.3em] uppercase font-bold text-center leading-tight">
+                  ESTABLECIENDO_CONEXIÓN_IA...
                 </p>
-                <span className="w-3 h-6 bg-emerald-500/80 animate-bounce"></span>
-              </div>
-
-              {/* Línea de Carga Industrial */}
-              <div className="w-80 h-[3px] bg-white/5 border border-white/10 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-old-gold to-transparent animate-[loading_2.5s_infinite]" />
               </div>
             </div>
           </div>
         </section>
-        {/* 01_MANIFIESTO: Introducción Profesional */}
-        <section className="mb-16 md:mb-32 mt-8 md:mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div>
-            <div className="flex items-center gap-4 mb-8 opacity-60 group">
+
+        {/* LÍNEA DIVISORA TÉCNICA: Diferencia el Hero de la siguiente sección */}
+        <div className="relative w-full flex items-center justify-center my-6 md:my-12 opacity-40">
+          <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-old-gold to-transparent"></div>
+          <div className="absolute px-4 bg-obsidian flex items-center gap-2">
+            <span className="text-[7px] md:text-[9px] font-mono text-old-gold uppercase tracking-[0.4em]">Section_Separator</span>
+          </div>
+        </div>
+        {/* 01_MANIFIESTO: Centrado Armonioso */}
+        <section className="mb-20 md:mb-32 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center px-2">
+          <div className="text-center lg:text-left">
+            <div className="flex items-center justify-center lg:justify-start gap-4 mb-6 opacity-60">
               <span className="text-old-gold font-mono text-lg font-bold">[01]</span>
-              <div className="h-[1px] w-12 bg-old-gold/40 group-hover:w-20 transition-all duration-500"></div>
-              <span className="tracking-[0.4em] uppercase text-xs font-mono font-bold text-white">Sobre_Mí</span>
+              <div className="h-[1px] w-12 bg-old-gold/40"></div>
+              <span className="tracking-[0.4em] uppercase text-[10px] font-mono font-bold text-white">Sobre_Mí</span>
             </div>
-            <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold text-white mb-6 md:mb-8 tracking-tighter leading-tight">
-              Arquitecturas de <span className="text-old-gold">Automatización</span> para la era de la IA.
+            <h2 className="text-2xl md:text-6xl font-bold text-white mb-6 tracking-tighter leading-tight">
+              Arquitecturas de <span className="text-old-gold">Automatización</span>
             </h2>
-            <p className="text-base sm:text-xl md:text-2xl leading-relaxed text-antique-silver/90 border-l-4 border-old-gold/30 pl-4 md:pl-8 italic">
-              "Diseño sistemas resilientes donde la Inteligencia Artificial y la automatización convergen para eliminar ineficiencias operativas."
+            <p className="text-base md:text-2xl leading-relaxed text-antique-silver/90 border-l-2 lg:border-l-4 border-old-gold/30 pl-4 lg:pl-8 italic mx-auto lg:mx-0 max-w-[90%]">
+              "Diseño sistemas resilientes donde la IA y la automatización convergen."
             </p>
           </div>
-          <div className="bg-black/60 border-2 border-old-gold p-4 md:p-8 rounded-sm font-mono text-[13px] md:text-[14px] leading-relaxed shadow-2xl">
-            <p className="text-old-gold mb-4">// PERFIL_DEL_SISTEMA_CARGADO</p>
-            <div className="space-y-3 text-antique-silver/80">
+          <div className="bg-black/40 border border-old-gold/20 p-6 md:p-8 rounded-sm font-mono text-[12px] md:text-[14px] shadow-2xl backdrop-blur-sm">
+            <p className="text-old-gold mb-4 text-[10px] opacity-70">// PERFIL_SISTEMA_CARGADO</p>
+            <div className="space-y-3 text-antique-silver/80 text-left">
               <p>&gt; Especialista en flujos de IA Generativa.</p>
-              <p>&gt; Experta en arquitectura de datos y ciberseguridad.</p>
-              <p>&gt; Enfoque en estabilidad y escalabilidad industrial.</p>
-              <p className="mt-6 pt-4 border-t border-white/10 text-emerald-500 animate-pulse font-bold tracking-widest uppercase">
+              <p>&gt; Experta en arquitectura de datos.</p>
+              <div className="mt-6 pt-4 border-t border-white/5 text-emerald-500 animate-pulse font-bold tracking-widest uppercase text-[10px] text-center lg:text-left">
                 Estado: Disponible para proyectos
-              </p>
+              </div>
             </div>
           </div>
         </section>
-
-        {/* 02_PROYECTOS: Consola con Fondo de Video y Resplandor Esmeralda */}
-        <section id="proyectos" className="mb-20 md:mb-48 relative flex flex-col items-center">
-          {/* Encabezado Terminal */}
-          <div className="flex flex-col items-center mb-16 text-center">
-            <div className="flex items-center gap-4 opacity-60 mb-6 group">
-              <span className="text-emerald-500 font-mono text-xl font-bold">[02]</span>
-              <div className="h-[1px] w-12 bg-emerald-500/40 group-hover:w-20 transition-all duration-500"></div>
-              <span className="tracking-[0.4em] uppercase text-xs font-mono font-bold text-white">
-                Proyectos_Seleccionados
-              </span>
-            </div>
-            <div className="max-w-3xl px-2 md:px-6 text-antique-silver/90 font-mono text-base md:text-lg lowercase">
-              &gt; analizando_repositorios_activos...
+        {/* LÍNEA DIVISORA TÉCNICA: Diferencia el Hero de la siguiente sección */}
+        <div className="relative w-full flex items-center justify-center my-6 md:my-12 opacity-40">
+          <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-old-gold to-transparent"></div>
+          <div className="absolute px-4 bg-obsidian flex items-center gap-2">
+            <span className="text-[7px] md:text-[9px] font-mono text-old-gold uppercase tracking-[0.4em]">Section_Separator</span>
+          </div>
+        </div>
+        {/* 02_PROYECTOS: MONITOR TÁCTICO (SOLUCIÓN MÓVIL) */}
+        <section id="proyectos" className="mb-24 md:mb-48 relative flex flex-col items-center">
+          <div className="flex flex-col items-center mb-10 text-center px-4">
+            <div className="flex items-center gap-4 opacity-60 mb-4">
+              <span className="text-emerald-500 font-mono text-lg font-bold">[02]</span>
+              <span className="tracking-[0.2em] uppercase text-[10px] font-mono font-bold text-white">Proyectos_Seleccionados</span>
             </div>
           </div>
 
-          {/* HARDWARE: MONITOR */}
-          <div className="relative mx-auto max-w-[1100px] w-full px-1 sm:px-4 flex flex-col items-center group/monitor mb-8 md:mb-16">
-                <div className="relative w-full bg-[#0A0A0A] rounded-[20px] sm:rounded-[35px] p-2 sm:p-5 border border-emerald-500/30 
-                  shadow-[0_0_40px_-10px_rgba(16,185,129,0.2)] transition-all duration-700 
-                  group-hover/monitor:shadow-[0_0_100px_-5px_rgba(16,185,129,0.6)]">
+          <div className="relative w-full max-w-[1100px] bg-[#0A0A0A] rounded-[25px] md:rounded-[35px] p-2 md:p-5 border border-emerald-500/20 shadow-2xl flex flex-col items-center">
+            {/* Monitor: Cambia a Vertical en móvil para legibilidad */}
+            <div className="relative aspect-[3/4] md:aspect-[16/10] w-full bg-[#020202] rounded-[20px] md:rounded-[25px] overflow-hidden border-2 md:border-[12px] border-[#121212] flex items-center">
 
-                    <div className="relative aspect-[16/10] w-full bg-[#020202] rounded-[15px] sm:rounded-[25px] overflow-hidden 
-                      border-[6px] sm:border-[12px] border-[#121212] shadow-[inset_0_0_60px_rgba(0,0,0,1)] 
-                      flex items-center justify-center">
+              <div className="absolute inset-0 z-0 opacity-40">
+                <video autoPlay loop muted playsInline className="w-full h-full object-cover mix-blend-lighten">
+                  <source src="/fondo_monitor.mp4" type="video/mp4" />
+                </video>
+              </div>
 
-                {/* --- CAPA DE FONDO: VIDEO --- */}
-                <div className="absolute inset-0 z-0">
-                  <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-60 mix-blend-lighten">
-                    <source src="/fondo_monitor.mp4" type="video/mp4" />
-                  </video>
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-emerald-900/10 to-black/60 z-1" />
-                  <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(16,185,129,0.05)_50%)] bg-[length:100%_4px] z-10 opacity-30" />
-                </div>
-
-                {/* Contenedor de Proyectos Reflejados */}
-                <div className="relative z-20 w-full h-full flex items-center justify-start gap-4 sm:gap-6 px-2 sm:px-8 py-4 sm:py-12 overflow-x-auto no-scrollbar scrollbar-thin scrollbar-thumb-emerald-500">
-                  {[
-                    {
-                      title: "Chatbot_Ciudadano",
-                      protocol: "NLP_NEURAL_ENGINE",
-                      latency: "0.012ms",
-                      status: "Listo_PARA_DESPLEGAR",
-                      url: null,
-                      description: "Agente conversacional inteligente con integración RAG. Optimizado para resolver consultas complejas y automatizar trámites en tiempo real mediante procesamiento de lenguaje natural."
-                    },
-                    {
-                      title: "Email_System_Control",
-                      protocol: "SMTP_ORCHESTRATOR",
-                      latency: "0.850ms",
-                      status: "BUILDING...",
-                      url: null,
-                      description: "Sistema de mensajería automatizada basado en disparadores de comportamiento. Gestión masiva de notificaciones críticas con filtrado inteligente y trazabilidad total de entrega."
-                    },
-                    {
-                      title: "Smartbilling",
-                      protocol: "FINTECH_PROTOCOL",
-                      latency: "0.005ms",
-                      status: "PROXIMO_LANZAMIENTO",
-                      url: null,
-                      description: "Motor de facturación electrónica y conciliación bancaria autónoma. Automatización de flujos financieros con validación fiscal íntegra y generación de informes de alta precisión."
-                    }
-                  ].map((project, idx) => (
-                    <div key={idx} className="relative w-[180px] sm:w-[260px] h-[260px] sm:h-[360px] transition-all duration-500 hover:scale-[1.05] group/card flex-shrink-0 mx-2">
-                      <div className="absolute -inset-1 bg-emerald-500/10 blur-lg opacity-0 group-hover/card:opacity-100 transition-opacity" />
-                      <div className="relative h-full w-full bg-black/85 backdrop-blur-md border border-old-gold/20 rounded-xl p-5 overflow-hidden shadow-2xl transition-all group-hover/card:border-old-gold/50 flex flex-col">
-
-                        <div className="flex justify-between items-start mb-4">
-                          <div className="p-1.5 bg-old-gold/10 rounded-lg border border-old-gold/20">
-                            <svg className="w-4 h-4 text-old-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                              <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
-                            </svg>
-                          </div>
-                          <div className="flex h-2 w-2">
-                            <span className={`animate-ping absolute inline-flex h-2 w-2 rounded-full ${project.status === 'Listo_PARA_DESPLEGAR' ? 'bg-emerald-400' : 'bg-amber-400'} opacity-75`}></span>
-                            <span className={`relative inline-flex rounded-full h-2 w-2 ${project.status === 'Listo_PARA_DESPLEGAR' ? 'bg-emerald-500' : 'bg-amber-500'} shadow-[0_0_8px_currentColor]`}></span>
-                          </div>
+              {/* Contenedor de Proyectos: Snap Scroll Lateral */}
+              <div className="relative z-20 w-full h-full flex items-center gap-6 px-6 md:px-12 overflow-x-auto snap-x snap-mandatory no-scrollbar scroll-smooth">
+                {projects.map((project, idx) => (
+                  <div key={idx} className="w-[80vw] md:w-[280px] h-[75%] md:h-[340px] flex-shrink-0 snap-center">
+                    <div className="h-full bg-black/90 border border-old-gold/20 rounded-xl p-6 flex flex-col justify-between backdrop-blur-md">
+                      <div>
+                        <div className="flex justify-between items-center mb-4">
+                          <span className="text-[9px] font-mono text-old-gold/40 tracking-widest uppercase">Module_0{idx + 1}</span>
+                          <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_10px_#10b981]" />
                         </div>
-
-                        <h4 className="text-old-gold font-bold tracking-tighter text-base mb-2 uppercase italic">{project.title}</h4>
-
-                        <div className="space-y-1.5 mb-4 font-mono text-[8px]">
-                          <div className="flex justify-between border-b border-white/5 pb-1">
-                            <span className="text-antique-silver/60 uppercase">Protocolo</span>
-                            <span className="text-emerald-400 font-bold">{project.protocol}</span>
-                          </div>
-                          <div className="flex justify-between border-b border-white/5 pb-1">
-                            <span className="text-antique-silver/60 uppercase">Latencia</span>
-                            <span className="text-emerald-400 font-bold">{project.latency}</span>
-                          </div>
-                        </div>
-
-                        <div className="mb-2 sm:mb-4 flex-grow">
-                          <p className="text-[10px] sm:text-[11px] text-white/80 leading-normal font-light italic border-l border-old-gold/20 pl-2">
-                            {project.description}
-                          </p>
-                        </div>
-
-                        {/* Botón de Estado / Acción */}
-                        <div className="mt-2 sm:mt-4">
-                          {project.url ? (
-                            <a href={project.url} target="_blank" rel="noopener noreferrer" className="block w-full py-2 bg-emerald-500/10 border border-emerald-500/20 text-[8px] text-emerald-400 font-mono uppercase tracking-[0.15em] hover:bg-emerald-500 hover:text-black text-center transition-all font-bold cursor-pointer">
-                              [ VER_REPOSITORIO ]
-                            </a>
-                          ) : (
-                            <div className="w-full py-1 sm:py-2 bg-white/5 border border-white/10 text-[7px] sm:text-[8px] text-white/40 font-mono uppercase tracking-[0.1em] text-center font-bold">
-                              {project.status}
-                            </div>
-                          )}
-                        </div>
+                        <h4 className="text-white text-base md:text-base font-bold uppercase mb-3 italic tracking-tight">{project.title}</h4>
+                        <p className="text-[11px] md:text-[11px] text-antique-silver/60 italic leading-relaxed line-clamp-6">
+                          {project.description}
+                        </p>
+                      </div>
+                      <div className="text-[9px] md:text-[10px] text-old-gold/60 font-mono border border-old-gold/20 py-2 text-center mt-4 uppercase tracking-[0.2em] font-bold">
+                        {project.status}
                       </div>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          {/* Soporte Monitor (Oculto en móvil para ganar espacio vertical) */}
+          <div className="hidden md:block w-40 h-8 bg-gradient-to-b from-[#111] to-black border-x border-white/5" />
+          <div className="hidden md:block w-64 h-2 bg-[#0A0A0A] rounded-t-2xl border-t border-emerald-500/30" />
+        </section>
+       {/* LÍNEA DIVISORA TÉCNICA: Diferencia el Hero de la siguiente sección */}
+        <div className="relative w-full flex items-center justify-center my-6 md:my-12 opacity-40">
+          <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-old-gold to-transparent"></div>
+          <div className="absolute px-4 bg-obsidian flex items-center gap-2">
+            <span className="text-[7px] md:text-[9px] font-mono text-old-gold uppercase tracking-[0.4em]">Section_Separator</span>
+          </div>
+        </div>
+        {/* Sección de Flujo Lógico: Arquitectura Minimalista Interactiva */}
+        <section className="mb-12 md:mb-48 relative flex flex-col items-center group/panel px-1 xs:px-2">
+          {/* Fondo de Micro-puntos (Dot Matrix) más elegante que el Grid */}
+          <div className="absolute inset-0 bg-[radial-gradient(#ffffff05_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
 
-                {/* HUD de Pantalla */}
-                <div className="absolute top-8 left-10 font-mono text-[10px] text-emerald-500/60 flex gap-6 z-30">
-                  <span className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_10px_#10b981] animate-pulse" />
-                    LIVE_NEURAL_FEED
-                  </span>
-                  <span className="opacity-40 tracking-[0.3em] hidden sm:inline">DECODING_VIDEO_STREAM...</span>
+          <div className="relative z-10 flex flex-col items-center w-full max-w-6xl px-1 md:px-6">
+
+            {/* Header Minimalista */}
+            <div className="flex flex-col items-center mb-8 md:mb-20">
+              <span className="text-old-gold font-mono text-[9px] tracking-[0.6em] uppercase opacity-40 mb-3">System_Architecture_Blueprint</span>
+              <h3 className="text-white text-xl font-light tracking-[0.2em] uppercase">
+                Flujo Lógico <span className="text-old-gold/80 italic">Operativo</span>
+              </h3>
+              <div className="w-12 h-[1px] bg-old-gold/30 mt-4"></div>
+            </div>
+
+            {/* Contenedor Principal de Nodos */}
+            <div className="flex flex-col lg:flex-row items-stretch justify-center w-full gap-2 md:gap-0">
+
+              {/* NODO 01: ENTRADA */}
+              <div className="relative flex flex-col items-center group/node">
+                <div className="border border-old-gold/80 px-4 py-6 bg-black/80 backdrop-blur-xl min-w-[180px] md:min-w-[220px] h-[110px] md:h-[140px] text-center rounded-xl shadow-[0_0_40px_10px_rgba(178,148,91,0.12)] flex flex-col justify-center transition-all duration-500 group-hover/node:border-old-gold">
+                  <div className="text-[14px] text-old-gold/60 font-mono mb-4 tracking-widest uppercase animate-pulse">Step_01</div>
+                  <span className="text-old-gold font-mono text-[18px] font-bold uppercase tracking-[0.2em]">Entrada_De_Datos</span>
+                </div>
+              </div>
+              {/* Flecha móvil */}
+              <div className="flex lg:hidden items-center justify-center w-full h-10 my-2">
+                <span className="text-old-gold text-2xl font-bold">↓</span>
+              </div>
+
+              {/* CONECTOR ELEGANTE 01 */}
+              <div className="hidden lg:flex items-center justify-center w-12 h-[160px] relative">
+                <span className="text-old-gold text-2xl font-bold mx-2 self-center">➔</span>
+              </div>
+
+              {/* NODO 02: CEREBRO (EL NÚCLEO) */}
+              <div className="relative flex flex-col items-center group/node">
+                <div className="border border-old-gold/40 px-8 py-10 bg-black/60 backdrop-blur-lg min-w-[240px] h-[160px] text-center rounded-xl shadow-[0_0_30px_5px_rgba(178,148,91,0.08)] flex flex-col justify-center transition-all duration-500 group-hover/node:border-old-gold/80">
+                  <div className="text-[14px] text-old-gold/60 font-mono mb-4 tracking-widest uppercase animate-pulse">Processing_Core</div>
+                  <span className="text-old-gold font-mono text-[18px] font-bold uppercase tracking-[0.2em]">Cerebro_IA (LLM)</span>
+                </div>
+              </div>
+              {/* Flecha móvil */}
+              <div className="flex lg:hidden items-center justify-center w-full h-10 my-2">
+                <span className="text-old-gold text-2xl font-bold">↓</span>
+              </div>
+
+              {/* CONECTOR ELEGANTE 02 */}
+              <div className="hidden lg:flex items-center justify-center w-12 h-[160px] relative">
+                <span className="text-old-gold text-2xl font-bold mx-2 self-center">➔</span>
+              </div>
+
+              {/* NODO 03: EJECUCIÓN */}
+              <div className="relative flex flex-col items-center group/node">
+                <div className="border border-old-gold/40 px-8 py-10 bg-black/60 backdrop-blur-lg min-w-[240px] h-[160px] text-center rounded-xl shadow-[0_0_30px_5px_rgba(178,148,91,0.08)] flex flex-col justify-center transition-all duration-500 group-hover/node:border-old-gold/80">
+                  <div className="text-[14px] text-old-gold/60 font-mono mb-4 tracking-widest uppercase animate-pulse">Step_03</div>
+                  <span className="text-old-gold font-mono text-[18px] font-bold uppercase tracking-[0.2em]">Ejecución_Autónoma</span>
+                </div>
+              </div>
+              {/* Flecha móvil */}
+              <div className="flex lg:hidden items-center justify-center w-full h-10 my-2">
+                <span className="text-old-gold text-2xl font-bold">↓</span>
+              </div>
+
+              {/* CONECTOR ELEGANTE 03 */}
+              <div className="hidden lg:flex items-center justify-center w-12 h-[160px] relative">
+                <span className="text-old-gold text-2xl font-bold mx-2 self-center">➔</span>
+              </div>
+
+              {/* NODO 04: VALOR */}
+              <div className="relative flex flex-col items-center group/node">
+                <div className="border border-old-gold/40 px-8 py-10 bg-black/60 backdrop-blur-lg min-w-[240px] h-[160px] text-center rounded-xl shadow-[0_0_30px_5px_rgba(178,148,91,0.08)] flex flex-col justify-center transition-all duration-500 group-hover/node:border-old-gold/80">
+                  <div className="text-[14px] text-old-gold/60 font-mono mb-4 tracking-widest uppercase animate-pulse">Outcome</div>
+                  <span className="text-old-gold font-mono text-[18px] font-bold uppercase tracking-[0.2em]">Valor_De_Negocio</span>
                 </div>
               </div>
             </div>
-
-            {/* Soporte */}
-            <div className="w-24 sm:w-40 h-4 sm:h-8 bg-gradient-to-b from-[#111] to-black border-x border-white/5 shadow-2xl" />
-            <div className="w-32 sm:w-64 h-2 sm:h-3 bg-[#0A0A0A] rounded-t-2xl border-t border-emerald-500/30 shadow-[0_-10px_40px_rgba(16,185,129,0.2)]" />
-            <div className="w-24 sm:w-48 h-1 sm:h-2 bg-emerald-500/40 blur-md rounded-full mt-1 opacity-50" />
           </div>
         </section>
-
-        {/* Sección de Flujo Lógico: Arquitectura Minimalista Interactiva */}
-  <section className="mb-20 md:mb-48 relative flex flex-col items-center group/panel">
-  {/* Fondo de Micro-puntos (Dot Matrix) más elegante que el Grid */}
-  <div className="absolute inset-0 bg-[radial-gradient(#ffffff05_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
-
-  <div className="relative z-10 flex flex-col items-center w-full max-w-6xl px-2 md:px-6">
-    
-    {/* Header Minimalista */}
-    <div className="flex flex-col items-center mb-10 md:mb-20">
-       <span className="text-old-gold font-mono text-[9px] tracking-[0.6em] uppercase opacity-40 mb-3">System_Architecture_Blueprint</span>
-       <h3 className="text-white text-xl font-light tracking-[0.2em] uppercase">
-         Flujo Lógico <span className="text-old-gold/80 italic">Operativo</span>
-       </h3>
-       <div className="w-12 h-[1px] bg-old-gold/30 mt-4"></div>
-    </div>
-
-    {/* Contenedor Principal de Nodos */}
-    <div className="flex flex-col lg:flex-row items-stretch justify-center w-full gap-4 md:gap-0">
-      
-      {/* NODO 01: ENTRADA */}
-      <div className="relative flex flex-col items-center group/node">
-        <div className="border border-white/5 px-4 md:px-8 py-6 md:py-10 bg-white/[0.02] backdrop-blur-sm min-w-[160px] md:min-w-[220px] text-center transition-all duration-500 group-hover/node:bg-white/[0.05] group-hover/node:border-white/20">
-          <div className="text-[10px] text-white/20 font-mono mb-6 tracking-widest uppercase">Step_01</div>
-          <span className="text-antique-silver font-mono text-[12px] uppercase tracking-[0.15em] block mb-2">Entrada_De_Datos</span>
-          <div className="h-[1px] w-4 bg-white/10 mx-auto transition-all group-hover/node:w-12"></div>
+        {/* LÍNEA DIVISORA TÉCNICA: Diferencia el Hero de la siguiente sección */}
+        <div className="relative w-full flex items-center justify-center my-6 md:my-12 opacity-40">
+          <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-old-gold to-transparent"></div>
+          <div className="absolute px-4 bg-obsidian flex items-center gap-2">
+            <span className="text-[7px] md:text-[9px] font-mono text-old-gold uppercase tracking-[0.4em]">Section_Separator</span>
+          </div>
         </div>
-      </div>
-
-      {/* CONECTOR ELEGANTE 01 */}
-      <div className="flex items-center justify-center w-full lg:w-16 h-12 lg:h-auto relative">
-        <div className="h-full lg:h-[1px] w-[1px] lg:w-full bg-gradient-to-b lg:bg-gradient-to-r from-white/5 via-old-gold/40 to-white/5 opacity-50"></div>
-        <div className="absolute text-[8px] text-old-gold animate-pulse lg:rotate-0 rotate-90 tracking-tighter"></div>
-      </div>
-
-      {/* NODO 02: CEREBRO (EL NÚCLEO) */}
-      <div className="relative flex flex-col items-center group/node">
-        {/* Glow muy suave en el centro */}
-        <div className="absolute -inset-2 bg-old-gold/5 blur-2xl opacity-0 group-hover/node:opacity-100 transition-opacity duration-700"></div>
-        <div className="relative border border-old-gold/20 px-6 md:px-10 py-8 md:py-12 bg-black/40 backdrop-blur-md min-w-[180px] md:min-w-[260px] text-center shadow-[0_0_40px_-10px_rgba(178,148,91,0.05)] transition-all duration-500 group-hover/node:border-old-gold/50">
-          <div className="text-[10px] text-old-gold/40 font-mono mb-6 tracking-widest uppercase animate-pulse">Processing_Core</div>
-          <span className="text-old-gold font-mono text-[14px] font-bold uppercase tracking-[0.3em]">Cerebro_IA (LLM)</span>
-        </div>
-      </div>
-
-      {/* CONECTOR ELEGANTE 02 */}
-      <div className="flex items-center justify-center w-full lg:w-16 h-12 lg:h-auto relative">
-        <div className="h-full lg:h-[1px] w-[1px] lg:w-full bg-gradient-to-b lg:bg-gradient-to-r from-white/5 via-old-gold/40 to-white/5 opacity-50"></div>
-        <div className="absolute text-[8px] text-old-gold animate-pulse lg:rotate-0 rotate-90 tracking-tighter">➢</div>
-      </div>
-
-      {/* NODO 03: EJECUCIÓN */}
-      <div className="relative flex flex-col items-center group/node">
-        <div className="border border-white/5 px-4 md:px-8 py-6 md:py-10 bg-white/[0.02] backdrop-blur-sm min-w-[160px] md:min-w-[220px] text-center transition-all duration-500 group-hover/node:bg-white/[0.05] group-hover/node:border-white/20">
-          <div className="text-[10px] text-white/20 font-mono mb-6 tracking-widest uppercase">Step_03</div>
-          <span className="text-antique-silver font-mono text-[12px] uppercase tracking-[0.15em] block mb-2">Ejecución_Autónoma</span>
-          <div className="h-[1px] w-4 bg-white/10 mx-auto transition-all group-hover/node:w-12"></div>
-        </div>
-      </div>
-
-      {/* CONECTOR ELEGANTE 03 */}
-      <div className="flex items-center justify-center w-full lg:w-20 h-12 lg:h-auto relative">
-        <div className="h-full lg:h-[1px] w-[1px] lg:w-full bg-gradient-to-b lg:bg-gradient-to-r from-white/5 via-emerald-500/40 to-white/5 opacity-50"></div>
-        <div className="absolute text-[8px] text-emerald-500 animate-pulse lg:rotate-0 rotate-90 tracking-tighter">➢</div>
-      </div>
-
-      {/* NODO 04: VALOR */}
-      <div className="relative flex flex-col items-center group/node">
-        <div className="relative border border-emerald-500/10 px-8 py-10 bg-emerald-500/[0.02] backdrop-blur-sm min-w-[220px] text-center transition-all duration-500 group-hover/node:bg-emerald-500/[0.05] group-hover/node:border-emerald-500/30">
-          <div className="text-[10px] text-emerald-500/30 font-mono mb-6 tracking-widest uppercase">Outcome</div>
-          <span className="text-emerald-500 font-mono text-[13px] font-bold uppercase tracking-[0.2em]">Valor_De_Negocio</span>
-        </div>
-      </div>
-
-    </div>
-
-    {/* Footer de sección con metadata técnica */}
-    <div className="mt-20 flex gap-12 text-[9px] font-mono text-white/20 uppercase tracking-[0.4em]">
-       <div className="flex items-center gap-2">
-          <span className="w-1 h-1 bg-emerald-500 rounded-full"></span>
-          Optimización_Activa
-       </div>
-       <div className="flex items-center gap-2">
-          <span className="w-1 h-1 bg-old-gold rounded-full"></span>
-          Latencia_Minimizada
-       </div>
-    </div>
-  </div>
-</section>
         {/* [04] PANEL TÉCNICO: Especialización por Ecosistemas */}
-        <section className="mb-32">
+        <section className="mb-20 md:mb-32 px-1 xs:px-2">
           <div className="flex items-center gap-4 mb-12 opacity-60 group">
             <span className="text-old-gold font-mono text-xl font-bold">[04]</span>
             <div className="h-[1px] w-12 bg-old-gold/40 group-hover:w-20 transition-all duration-500"></div>
             <span className="tracking-[0.4em] uppercase text-xs font-mono font-bold text-white">Panel_Técnico_Lenguaje</span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {[
               {
                 title: "Motor_IA",
@@ -417,15 +355,22 @@ export default function Home() {
             ))}
           </div>
         </section>
+       {/* LÍNEA DIVISORA TÉCNICA: Diferencia el Hero de la siguiente sección */}
+        <div className="relative w-full flex items-center justify-center my-6 md:my-12 opacity-40">
+          <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-old-gold to-transparent"></div>
+          <div className="absolute px-4 bg-obsidian flex items-center gap-2">
+            <span className="text-[7px] md:text-[9px] font-mono text-old-gold uppercase tracking-[0.4em]">Section_Separator</span>
+          </div>
+        </div>
         {/* Sección de Estándares de Calidad - Enfocada al Usuario */}
-        <section className="mb-32">
+        <section className="mb-20 md:mb-32 px-1 xs:px-2">
           <div className="flex items-center gap-4 mb-12 opacity-60">
             <span className="text-old-gold font-mono text-xl font-bold">[05]</span>
             <div className="h-[1px] w-12 bg-old-gold/40"></div>
             <span className="tracking-[0.4em] uppercase text-xs font-mono font-bold text-white">Estándares_Industriales</span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {[
               {
                 title: 'PRIVACIDAD',
@@ -489,14 +434,21 @@ export default function Home() {
             ))}
           </div>
         </section>
+        {/* LÍNEA DIVISORA TÉCNICA: Diferencia el Hero de la siguiente sección */}
+        <div className="relative w-full flex items-center justify-center my-6 md:my-12 opacity-40">
+          <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-old-gold to-transparent"></div>
+          <div className="absolute px-4 bg-obsidian flex items-center gap-2">
+            <span className="text-[7px] md:text-[9px] font-mono text-old-gold uppercase tracking-[0.4em]">Section_Separator</span>
+          </div>
+        </div>
         {/* 05_FORMACIÓN: Trayectoria Académica */}
-        <section className="mb-32">
+        <section className="mb-20 md:mb-32 px-1 xs:px-2">
           <div className="flex items-center gap-4 mb-10 opacity-60 group">
             <span className="text-old-gold font-mono text-lg font-bold">[06]</span>
             <div className="h-[1px] w-12 bg-old-gold/40 group-hover:w-20 transition-all duration-500"></div>
             <span className="tracking-[0.4em] uppercase text-xs font-mono font-bold text-white">Historial_Académico</span>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
             {[
               { centro: "Reboot Academy", curso: "Especialista en Inteligencia Artificial", h: "-" },
               { centro: "FAUCA", curso: "Actividades de Gestión Administrativa", h: "-" },
@@ -517,18 +469,15 @@ export default function Home() {
       </main>
 
       {/* FOOTER: Terminal de Contacto con Fondo Neural */}
-      <footer className="w-full relative py-32 border-t border-white/5 text-center px-6 overflow-hidden group">
+      <footer className="w-full relative py-20 md:py-32 border-t border-white/5 text-center px-2 md:px-6 overflow-hidden group">
 
         {/* CAPA DE FONDO: Imagen de Neuronas */}
         <div className="absolute inset-0 z-0">
           <img
-            src="\footer.png"
+            src="/footer.png"
             alt="IA Neural Network"
-            className="w-full h-full object-cover opacity-30 mix-blend-screen transition-transform duration-1000 group-hover:scale-110"
+            className="w-full h-full object-cover opacity-80 mix-blend-normal transition-transform duration-1000 group-hover:scale-110"
           />
-          {/* Gradiente para fundir la imagen con el negro de la web */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black z-10" />
-          <div className="absolute inset-0 bg-black/40 z-10" />
         </div>
 
         {/* CONTENIDO DEL FOOTER */}
@@ -548,7 +497,7 @@ export default function Home() {
               onClick={() => setShowCard(true)}
               className="relative overflow-hidden border-2 border-old-gold/40 text-old-gold font-mono text-sm px-12 py-5 transition-all duration-500 hover:border-old-gold hover:shadow-[0_0_20px_rgba(178,148,91,0.3)] font-bold tracking-[0.3em] group/btn"
             >
-              <span className="relative z-10">[ INICIAR_PROTOCOLO_CONTACTO ]</span>
+              <span className="relative z-10">[ INICIAR_CONTACTO ]</span>
               {/* Efecto de barrido al pasar el ratón */}
               <div className="absolute inset-0 bg-old-gold translate-x-[-100%] group-hover/btn:translate-x-0 transition-transform duration-300 opacity-10" />
             </button>
@@ -566,12 +515,12 @@ export default function Home() {
                 </button>
 
                 {/* Foto a la izquierda con efecto técnico */}
-                <div className="flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-old-gold/20 to-black w-full md:w-72 h-72 md:h-96 p-8 relative">
+                <div className="flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-old-gold/20 to-black w-full md:w-72 h-56 md:h-96 p-4 md:p-8 relative">
                   <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
                   <img
                     src="/susanapierre.jpeg"
                     alt="Susana Pierre"
-                    className="w-44 h-44 md:w-52 md:h-52 rounded-full object-cover border-4 border-old-gold shadow-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-700"
+                    className="w-32 h-32 md:w-52 md:h-52 rounded-full object-cover border-4 border-old-gold shadow-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-700"
                   />
                 </div>
 

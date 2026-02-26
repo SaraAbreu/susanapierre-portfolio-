@@ -9,7 +9,20 @@
   --antique-silver: #848482;
   --obsidian: #0A0A0A;
 }
+/* 1. Fondo del Hero con Cuadrícula Más Grande */
+.hero-section {
+  /* ... otros estilos ... */
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 2px, transparent 2px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 2px, transparent 2px);
+  background-size: 100px 100px; /* Tamaño de los cuadros más grande */
+  background-position: -2px -2px;
+}
 
+/* 2. Menú de Hamburguesa Más Opaco */
+.menu-window.open {
+  background-color: rgba(0, 0, 0, 0.95); /* Color de fondo sólido y opaco */
+  /* ... otros estilos para el menú ... */
+}
 body {
   background-color: #0A0A0A;
   overflow-x: hidden;
